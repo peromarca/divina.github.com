@@ -1,0 +1,411 @@
+/* Reset */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Segoe UI', sans-serif;
+}
+
+/* Boje */
+:root {
+   --gold: #d4af37;
+   --lightblue: #e0f0ff;
+   --text: #333;
+}
+
+/* Header */
+header {
+   background-color: var(--lightblue);
+   color: var(--text);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 15px 30px;
+   border-bottom: 2px solid var(--gold);
+   flex-wrap: wrap;
+   margin-bottom: 0;
+}
+
+.logo {
+   height: 80px;
+}
+
+.header-center {
+   flex-grow: 1;
+   text-align: center;
+   font-size: 1.2rem;
+   font-weight: bold;
+   color: var(--gold);
+}
+
+.header-right {
+   display: flex;
+   align-items: center;
+   gap: 15px;
+}
+
+.icon {
+   height: 50px;
+   cursor: pointer;
+   font-size: 2.3rem;
+}
+
+#cart-count {
+   background-color: var(--gold);
+   color: white;
+   border-radius: 50%;
+   padding: 2px 8px;
+   font-size: 1.2rem;
+   margin-left: -10px;
+   position: relative;
+   top: -10px;
+}
+
+/* Navigacija */
+nav a {
+   margin-left: 10px;
+   text-decoration: none;
+   color: var(--text);
+   font-weight: 500;
+}
+
+/* Main content */
+main {
+   display: flex;
+   padding: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+   width: 250px;
+   background-color: #f9f9f9;
+   padding: 20px;
+   border-right: 2px solid var(--lightblue);
+}
+
+.sidebar h2 {
+   margin-bottom: 15px;
+   color: var(--gold);
+   font-style: italic;
+   font-size: 2.2rem;
+}
+
+.sidebar ul li {
+   list-style: none;
+   padding: 14px;
+   margin-bottom: 6px;
+   background-color: var(--lightblue);
+   border: 2px solid var(--gold);
+   border-radius: 8px;
+   cursor: pointer;
+   transition: 0.3s;
+}
+
+.sidebar ul li:hover {
+   border-left: 30px solid var(--gold);
+   background-color: #dbeeff;
+}
+
+/* Welcome section */
+.welcome-section {
+   text-align: center;
+   margin-bottom: 30px;
+   padding: 20px;
+   background-color: var(--lightblue);
+}
+
+.welcome-section h1 {
+   font-family: 'Italic', sans-serif;
+   font-style: bolder;
+   font-weight: 2000px;
+   font-size: 2.5rem;
+   color: var(--gold);
+   margin-bottom: 20px;
+   text-align: center;
+}
+
+.welcome-img {
+   width: 70%;
+   max-height: 300px;
+   object-fit: cover;
+   border-radius: 10px;
+   margin-bottom: 15px;
+}
+
+/* Main content area */
+.main-content {
+   flex: 1;
+   padding-left: 30px;
+}
+
+.product-list {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+   gap: 20px;
+}
+
+.product-card {
+   position: relative;
+   background-color: white;
+   border: 1px solid var(--lightblue);
+   padding: 15px;
+   border-radius: 10px;
+   text-align: center;
+   transition: 0.3s;
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+   max-width: 70%;
+   height: 160px;
+   object-fit: cover;
+   border-radius: 8px;
+}
+
+.product-card h3 {
+   margin: 10px 0;
+   color: var(--text);
+}
+
+/* Hover košarica efekt */
+.cart-hover-icon {
+   font-size: 2rem;
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   background-color: var(--gold);
+   padding: 5px;
+   border-radius: 50%;
+   display: none;
+   cursor: pointer;
+}
+
+.product-card:hover .cart-hover-icon {
+   display: block;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+
+   /* Preuređivanje zaglavlja */
+   header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+   }
+
+   .logo-container {
+      flex-basis: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+   }
+
+   #current-category-container,
+   .header-right {
+      flex: 1 1 50%;
+      gap: 5px;
+      padding-left: 160px;
+   }
+
+   #current-category-container {
+      text-align: left;
+      padding-left: 10px;
+      padding-right: 10px;
+   }
+
+   .header-right {
+      text-align: right;
+      padding-right: 10px;
+   }
+
+   .header-right a.icon {
+      margin-left: 10px;
+      font-size: 2.3rem;
+   }
+
+   .main-content {
+      display: contents;
+   }
+
+   main {
+      display: grid;
+      grid-template-areas:
+         "welcome welcome"
+         "sidebar productlist";
+      grid-template-columns: 40% 60%;
+      grid-gap: 20px;
+   }
+
+   .welcome-section {
+      grid-area: welcome;
+      width: 90%;
+   }
+
+   aside.sidebar {
+      grid-area: sidebar;
+      width: 100%;
+   }
+
+   #product-list {
+      grid-area: productlist;
+   }
+
+}
+
+/* Ostali stilovi, npr. za elemente koji nisu vezani za košaricu */
+.product-image-container {
+   position: relative;
+}
+
+.cart-quantity-overlay {
+   position: absolute;
+   bottom: 5px;
+   right: 5px;
+   background-color: red;
+   color: white;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 1.6rem;
+   background-size: auto;
+}
+
+#current-category-container {
+   display: flex;
+   justify-content: center;
+   padding: 15px;
+   border: 2px solid var(--gold);
+   background-color: var(--lightblue);
+   border-radius: 15px;
+   text-align: center;
+   max-width: 900px;
+   font-size: 1.6rem;
+   font-weight: bold;
+   color: var(--gold);
+   font-family: 'italic', sans-serif;
+}
+
+.footer-links {
+   margin-top: 20px;
+   padding: 15px;
+   border: 2px solid var(--gold);
+   border-radius: 10px;
+   background-color: var(--lightblue);
+   text-align: center;
+}
+
+.footer-links a {
+   display: block;
+   margin: 10px 0;
+   text-decoration: none;
+   color: var(--text);
+   font-weight: bold;
+   font-size: 1.2rem;
+   transition: color 0.3s;
+}
+
+.footer-links a:hover {
+   color: var(--gold);
+}
+
+/* Košarica specifični stilovi */
+/* Cart Page Styles */
+.cart-page {
+   width: 100%;
+   margin: 0;
+   padding: 20px;
+   background-color: #f9f9f9;
+   min-height: calc(100vh - 120px);
+   box-sizing: border-box;
+}
+
+.cart-container {
+   display: flex;
+   flex-direction: column;
+   align-items: stretch;
+   /* Sadržaj se proteže na punu širinu */
+   width: 100%;
+   max-width: 100%;
+   /* ukloni fiksirani max-width */
+   margin: 0;
+   padding: 20px;
+   box-sizing: border-box;
+}
+
+.cart-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding-bottom: 15px;
+   margin-bottom: 20px;
+   border-bottom: 2px solid var(--gold);
+   gap: 30px;
+   width: 100%;
+}
+
+.cart-item {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 15px 0;
+   border-bottom: 1px solid #eee;
+}
+
+.cart-item-info {
+   display: flex;
+   align-items: center;
+   gap: 15px;
+}
+
+.cart-item-info img {
+   width: 60px;
+   height: 60px;
+   object-fit: cover;
+   border-radius: 5px;
+}
+
+.cart-item-controls {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}
+
+.cart-item-controls button {
+   background-color: var(--gold);
+   color: white;
+   border: none;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   font-size: 16px;
+   cursor: pointer;
+   transition: all 0.3s;
+}
+
+.cart-item-controls button:hover {
+   background-color: var(--lightblue);
+   color: var(--gold);
+}
+
+.cart-total {
+   text-align: right;
+   margin-top: 20px;
+   font-size: 1.2rem;
+   font-weight: bold;
+   width: 100%;
+}
+
+.empty-cart {
+   text-align: center;
+   padding: 40px 0;
+   color: #666;
+}
+
+#cart-items-container {
+   width: 100%;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hr">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Divinin svijet</title>
+   <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+
+   <header>
+      <div class="logo-container">
+         <img src="images/logo.jpg" alt="Logo" class="logo">
+      </div>
+
+      <div id="current-category-container">
+         <span id="current-category"></span>
+      </div>
+      <div class="header-right">
+         <a href="cart.html" id="cart-link" class="icon">
+            🛒
+            <span id="cart-count">0</span>
+         </a>
+         <a href="#" class="icon">🔍</a> <!-- Povećalo kao zaseban link -->
+      </div>
+
+      </div>
+   </header>
+
+   <main>
+
+      <aside class="sidebar">
+         <h2>Kategorije</h2>
+
+         <ul id="category-list">
+            <li data-category="naušnice zlato">naušnice zlato</li>
+            <li data-category="naušnice srebro">naušnice srebro</li>
+            <li data-category="ogrlice">ogrlice</li>
+            <li data-category="ogrlice s kamenom">ogrlice s kamenom</li>
+            <li data-category="narukvice zlato">narukvice zlato</li>
+            <li data-category="narukvice">narukvice</li>
+            <li data-category="rukolanci">rukolanci</li>
+            <li data-category="brošure">brošure</li>
+            <li data-category="posebne ponude">posebne ponude</li>
+            <li data-category="personalizirani komadi">personalizirani komadi</li>
+         </ul>
+
+
+         <div class="footer-links">
+            <a href="#">Kontakt</a>
+            <a href="#">Newsletter</a>
+            <a href="#">Pretplati se</a>
+         </div>
+
+      </aside>
+
+
+
+
+      <section class="main-content">
+         <div id="welcome-section" class="welcome-section">
+            <h1>Dobrodošli u Divinin svijet</h1>
+            <img src="images/welcome1.jpeg" alt="Dobrodošlica" class="welcome-img">
+         </div>
+
+         <div id="product-list" class="product-list">
+            <!-- proizvodi pojedine kategorije prikazani ovdje -->
+         </div>
+
+
+      </section>
+   </main>
+
+   <script src="scripts/data.js"></script>
+   <script src="scripts/app.js"></script>
+</body>
+
+</html>
